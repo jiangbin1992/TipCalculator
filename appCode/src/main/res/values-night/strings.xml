@@ -33,10 +33,10 @@
 
     <string name="version">v.0.6</string>
     <!--Test App Id-->
-    <string name="inter_ads">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="banner_ads">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="rewards_ads">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="native_ads">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="inter_ads">ca-app-pub-3940256099942544/4411468910</string>
+    <string name="banner_ads">ca-app-pub-3940256099942544/2934735716</string>
+    <string name="rewards_ads">ca-app-pub-3940256099942544/1712485313</string>
+    <string name="native_ads">ca-app-pub-3940256099942544/4411468910</string>
     <!--admob-->
 <!--    <string name="inter_ads">ca-app-pub-3547026615546708/8418589107</string>-->
 <!--    <string name="banner_ads">ca-app-pub-3547026615546708/3058644735</string>-->

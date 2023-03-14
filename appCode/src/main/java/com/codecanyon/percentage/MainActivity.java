@@ -1,5 +1,7 @@
 package com.codecanyon.percentage;
 
+import static com.best.now.myad.utils.PublicHelperKt.loadAd;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -33,6 +35,7 @@ import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
+import com.best.now.myad.utils.PublicHelperKt;
 import com.codecanyon.percentage.Backend.CgpaSaved;
 import com.codecanyon.percentage.Backend.DiscountSaved;
 import com.codecanyon.percentage.Backend.Fav;
@@ -77,6 +80,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+
 public class MainActivity extends AppCompatActivity implements BillingProcessor.IBillingHandler {
     RelativeLayout menu, cart, fav, download;
     TextView favText;
@@ -84,8 +90,8 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
     RelativeLayout updateLayout;
     TextView updateButton;
     List<Integer> imagesFav;
-    RecyclerView favouriteRecycle, percentageRecycle, gpaRecycle, generalRecycle,mathRecycler;
-    CalculationAdapter percentageAdapter, gpaAdapter, generalAdapter, favouriteAdapter,mathAdapter;
+    RecyclerView favouriteRecycle, percentageRecycle, gpaRecycle, generalRecycle, mathRecycler;
+    CalculationAdapter percentageAdapter, gpaAdapter, generalAdapter, favouriteAdapter, mathAdapter;
     GridLayoutManager gridLayoutManager;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference mDatabase;
@@ -119,7 +125,8 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         bp.initialize();
         purchase = getApplicationContext().getSharedPreferences(Constants.PACKAGE_NAME, Context.MODE_PRIVATE);
 
-
+        LinearLayout advBanner = findViewById(R.id.advBanner);
+        loadAd(advBanner);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -142,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                                     .inflate(R.layout.native_ads, null);
                             // This method sets the text, images and the native ad, etc into the ad
                             // view.
-                            populateNativeAdView(nativeAd, adView);
+                           // populateNativeAdView(nativeAd, adView);
                         }
                     })
                     .withAdListener(new AdListener() {
@@ -183,9 +190,18 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(getString(R.string.appLink)));
-                startActivity(intent);
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse(getString(R.string.appLink)));
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
+                }
+
             }
         });
         retrevingData();
@@ -195,38 +211,85 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         favText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                favClicked();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            favClicked();
+                            return null;
+                        }
+                    });
+                }
             }
         });
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                meenuNav();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            meenuNav();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
 
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, ExtraList.class);
+                            intent.putExtra("function", getString(R.string.Saved));
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
 
-                Intent intent = new Intent(MainActivity.this, ExtraList.class);
-                intent.putExtra("function", getString(R.string.Saved));
-                startActivity(intent);
+                }
+
             }
         });
 
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buyPremium();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            buyPremium();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
 
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                favClicked();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            favClicked();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
 
@@ -252,25 +315,25 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             }
 
             RatingBar starRating = adView.findViewById(R.id.start_rating);
-            if (nativeAd.getStarRating()!=null) {
+            if (nativeAd.getStarRating() != null) {
                 starRating.setRating(nativeAd.getStarRating().floatValue());
                 adView.setStarRatingView(starRating);
             }
 
             TextView advitisor = adView.findViewById(R.id.advertisername);
-            if (nativeAd.getAdvertiser()!=null) {
+            if (nativeAd.getAdvertiser() != null) {
                 advitisor.setText(nativeAd.getAdvertiser());
                 adView.setAdvertiserView(advitisor);
             }
 
             ImageView icon = adView.findViewById(R.id.adicon);
-            if (nativeAd.getIcon()!=null) {
+            if (nativeAd.getIcon() != null) {
                 icon.setImageDrawable(nativeAd.getIcon().getDrawable());
                 adView.setIconView(icon);
             }
 
             Button button = adView.findViewById(R.id.calltoaction);
-            if (nativeAd.getCallToAction()!=null) {
+            if (nativeAd.getCallToAction() != null) {
                 button.setText(nativeAd.getCallToAction());
                 adView.setCallToActionView(button);
             }
@@ -293,7 +356,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
 
             // Place the AdView into the parent.
             container.addView(adView);
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }
@@ -339,11 +402,12 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            QudraticClass saved = new QudraticClass(cursor.getString(fileNameIndex),cursor.getString(aIndex),cursor.getString(bIndex),cursor.getString(cIndex));
+            QudraticClass saved = new QudraticClass(cursor.getString(fileNameIndex), cursor.getString(aIndex), cursor.getString(bIndex), cursor.getString(cIndex));
             Constants.QUADRATIC_SAVED_LIST.add(saved);
             cursor.moveToNext();
         }
     }
+
     private void retrivingMarks() {
 
         Constants.MARKS_SAVED_LIST.clear();
@@ -473,11 +537,20 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             @Override
             public void onItemClick(View view, int position) {
                 // do whatever
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
+                            intent.putExtra("function", Constants.titlesPer[position]);
+                            intent.putExtra("openingSaved", false);
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
 
-                Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
-                intent.putExtra("function", Constants.titlesPer[position]);
-                intent.putExtra("openingSaved", false);
-                startActivity(intent);
+                }
+
             }
 
             @Override
@@ -489,7 +562,6 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         ///Maths Calculator
 
 
-
         mathAdapter = new CalculationAdapter(this, Constants.titleMaths, Constants.imagesMath);
         GridLayoutManager gridLayoutManager4 = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
 
@@ -499,10 +571,20 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             @Override
             public void onItemClick(View view, int position) {
                 // do whatever
-                Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
-                intent.putExtra("function", Constants.titleMaths[position]);
-                intent.putExtra("openingSaved", false);
-                startActivity(intent);
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
+                            intent.putExtra("function", Constants.titleMaths[position]);
+                            intent.putExtra("openingSaved", false);
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
+
+                }
+
             }
 
             @Override
@@ -510,7 +592,6 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                 // do whatever
             }
         }));
-
 
 
         //GPA
@@ -524,11 +605,20 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             @Override
             public void onItemClick(View view, int position) {
                 // do whatever
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
+                            intent.putExtra("function", Constants.titlesGpa[position]);
+                            intent.putExtra("openingSaved", false);
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
 
-                Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
-                intent.putExtra("function", Constants.titlesGpa[position]);
-                intent.putExtra("openingSaved", false);
-                startActivity(intent);
+                }
+
             }
 
             @Override
@@ -549,10 +639,20 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             @Override
             public void onItemClick(View view, int position) {
                 // do whatever
-                Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
-                intent.putExtra("function", Constants.titlesGen[position]);
-                intent.putExtra("openingSaved", false);
-                startActivity(intent);
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
+                            intent.putExtra("function", Constants.titlesGen[position]);
+                            intent.putExtra("openingSaved", false);
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
+
+                }
+
             }
 
             @Override
@@ -583,10 +683,19 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             @Override
             public void onItemClick(View view, int position) {
                 // do whatever
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
+                            intent.putExtra("function", fav.inArray()[position]);
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
 
-                Intent intent = new Intent(MainActivity.this, CalculationActivity.class);
-                intent.putExtra("function", fav.inArray()[position]);
-                startActivity(intent);
+                }
+
             }
 
             @Override
@@ -630,72 +739,161 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         favourite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menu.dismiss();
-                favClicked();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            menu.dismiss();
+                            favClicked();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         moreApps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menu.dismiss();
-                Intent intent = new Intent(MainActivity.this, ExtraList.class);
-                intent.putExtra("function", getString(R.string.More_Apps));
-                startActivity(intent);
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            menu.dismiss();
+                            Intent intent = new Intent(MainActivity.this, ExtraList.class);
+                            intent.putExtra("function", getString(R.string.More_Apps));
+                            startActivity(intent);
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         removeAds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buyPremium();
-                menu.dismiss();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            buyPremium();
+                            menu.dismiss();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         currency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menu.dismiss();
-                changeCurrency();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            menu.dismiss();
+                            changeCurrency();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(getString(R.string.appLink)));
-                startActivity(intent);
-                menu.dismiss();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse(getString(R.string.appLink)));
+                            startActivity(intent);
+                            menu.dismiss();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
 
         saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            Intent intent = new Intent(MainActivity.this, ExtraList.class);
+                            intent.putExtra("function", getString(R.string.Saved));
+                            startActivity(intent);
+                            menu.dismiss();
+                            return null;
+                        }
+                    });
 
-                Intent intent = new Intent(MainActivity.this, ExtraList.class);
-                intent.putExtra("function", getString(R.string.Saved));
-                startActivity(intent);
-                menu.dismiss();
+                }
+
             }
         });
         privacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menu.dismiss();
-                startActivity(new Intent(MainActivity.this, Privacy.class));
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            menu.dismiss();
+                            startActivity(new Intent(MainActivity.this, Privacy.class));
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         contactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menu.dismiss();
-                startActivity(new Intent(MainActivity.this, Contact.class));
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            menu.dismiss();
+                            startActivity(new Intent(MainActivity.this, Contact.class));
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         theme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menu.dismiss();
-                changeTheme();
+                if (PublicHelperKt.isRewarded(MainActivity.this)) {
+                    PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
+                        @Override
+                        public Unit invoke() {
+                            menu.dismiss();
+                            changeTheme();
+                            return null;
+                        }
+                    });
+
+                }
+
             }
         });
         share.setOnClickListener(new View.OnClickListener() {
@@ -858,7 +1056,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             purchase.edit().putBoolean("PURCHASE", true).apply();
             Toast.makeText(MainActivity.this, "You have purchased, Just restart the app.", Toast.LENGTH_LONG).show();
 
-            purchase.edit().putBoolean("PURCHASE",true).apply();
+            purchase.edit().putBoolean("PURCHASE", true).apply();
         }
     }
 

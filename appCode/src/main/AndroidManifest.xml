@@ -13,18 +13,23 @@
 <!--            android:value="ca-app-pub-3547026615546708~4982347609"/>-->
         <activity
             android:name="com.codecanyon.percentage.Pages.CalculationActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.codecanyon.percentage.Pages.Contact"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.codecanyon.percentage.Pages.InApp"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.codecanyon.percentage.Pages.Privacy"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.codecanyon.percentage.Pages.ExtraList"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <service
@@ -43,6 +48,7 @@
 <!--        </activity>-->
         <activity
             android:name="com.codecanyon.percentage.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <receiver android:name="com.codecanyon.percentage.Backend.AlertRecieer"/>
 
