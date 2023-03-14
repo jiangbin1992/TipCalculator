@@ -1,5 +1,6 @@
 package com.codecanyon.percentage;
 
+import static com.best.now.myad.utils.Constant.URL_PRIVACY_POLICY;
 import static com.best.now.myad.utils.PublicHelperKt.loadAd;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,7 @@ import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
+import com.best.now.myad.WebActivity;
 import com.best.now.myad.utils.PublicHelperKt;
 import com.codecanyon.percentage.Backend.CgpaSaved;
 import com.codecanyon.percentage.Backend.DiscountSaved;
@@ -853,7 +855,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                         @Override
                         public Unit invoke() {
                             menu.dismiss();
-                            startActivity(new Intent(MainActivity.this, Privacy.class));
+                            WebActivity.Companion.startActivity(MainActivity.this,"Privacy Policy",URL_PRIVACY_POLICY);
                             return null;
                         }
                     });

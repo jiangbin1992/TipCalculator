@@ -64,6 +64,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:id="@+id/rateUs"
+        android:visibility="gone"
         android:layout_marginTop="25dp"
         android:layout_height="wrap_content">
         <ImageView
@@ -173,7 +174,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:id="@+id/contactUs"
-
+android:visibility="gone"
         android:layout_marginTop="25dp"
         android:layout_height="wrap_content">
         <ImageView
@@ -195,6 +196,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:id="@+id/moreApps"
+        android:visibility="gone"
         android:layout_marginTop="25dp"
         android:layout_height="wrap_content">
         <ImageView
