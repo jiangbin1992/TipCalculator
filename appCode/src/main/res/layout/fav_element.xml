@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/layout"
+    android:background="@drawable/chalculation_element_shape"
+    android:layout_height="wrap_content"
+    android:paddingRight="15dp"
+    android:elevation="8dp"
+    android:layout_margin="5dp">
+    <View
+        android:layout_width="3dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        android:background="@color/colorMain"/>
+    <ImageView
+        android:id="@+id/calIcon"
+        android:layout_centerVertical="true"
+        android:layout_width="22dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="22dp"
+        app:layout_constraintRight_toLeftOf="@+id/calText"
+        android:background="@drawable/ic_gpa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/calText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cgpa"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="13sp"
+        android:layout_alignLeft="@+id/calIcon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fav"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_outline_favorite_border_24"
+        android:backgroundTint="@color/colorMain"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RelativeLayout>

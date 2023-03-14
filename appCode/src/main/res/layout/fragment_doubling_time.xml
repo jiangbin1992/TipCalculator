@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".Calculation.Ratio">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Increase  % / period"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/increase"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter Increase in % per period"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Doubling Time"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/period"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:inputType="number"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of the Doubling time"/>
+
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="reset"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="@color/colorMain"
+                android:textSize="14sp"
+                android:id="@+id/reset"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/not_selected_button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/colorLightGrey"
+                 android:text="Add any one known values the second unknown value will be found automatically.
+                \nThis calculation tells how much time it taes for something to grow by 100% when it grows by some % each time period.
+                \nFor example , if one is investing 100 ₹ with a yearly returns of 10 % one will have 200 ₹ after 7 years and 3 Months. "/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

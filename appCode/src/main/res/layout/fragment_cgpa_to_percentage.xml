@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".Calculation.CgpaToPercentage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Percentage"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:textColorHint="@color/colorLightGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/percentage"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of Percentage"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="CGPA"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:textColorHint="@color/colorLightGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cgpa"
+                    android:inputType="numberDecimal"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of CGPA"/>
+
+            </RelativeLayout>
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="reset"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="@color/colorMain"
+                android:textSize="14sp"
+                android:id="@+id/reset"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/not_selected_button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/colorLightGrey"
+                android:text="For converting CGPA to Percentage multiply CGPA value with 9.5. And, for converting Percentage to CGPA divide Percentage value with 9.5."/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

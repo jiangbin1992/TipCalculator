@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".Calculation.Quadratic">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:id="@+id/scroller"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@drawable/ic_quadratic"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:layout_height="42dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="a = "
+                android:id="@+id/costText"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/a"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of a "/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="b = "
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:id="@+id/b"
+                    android:inputType="numberDecimal"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of b"/>
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="c ="
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/c"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value c "/>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="reset"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/colorMain"
+                    android:textSize="14sp"
+                    android:id="@+id/reset"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/not_selected_button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="CALCULATE"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:id="@+id/calculate"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/selected_button"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/colorGrey"
+                android:layout_margin="20dp"
+                android:layout_height="0.5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:textSize="11sp"
+                android:textColor="@color/colorGrey"
+                android:text="*   In algebra, a quadratic equation is any polynomial equation of the second degree with the form: ax2 + bx + c = 0
+\n* where x is an unknown, a is referred to as the quadratic coefficient, b the linear coefficient, and c the constant."
+                android:layout_marginTop="0dp"/>
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:id="@+id/equation"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="Equation : ax2 +bx + c = 0"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:layout_marginBottom="10dp"
+                android:text="Solutions"
+                android:textColor="@color/colorBlack"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/x1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="X1"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:id="@+id/x2"
+                        android:textColor="@color/colorBlack"
+                        android:text="X2" />
+                </LinearLayout>
+
+                </LinearLayout>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Save"
+                android:id="@+id/save"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/selected_button"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

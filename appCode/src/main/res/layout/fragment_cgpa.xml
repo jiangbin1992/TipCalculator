@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="0dp"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Calculation.Cgpa">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scroller"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/element"
+                android:orientation="vertical"
+                android:layout_marginRight="45dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:layout_weight="7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:id="@+id/semester1"
+                        android:text="Semester 1"
+                        android:hint="Semester"
+                        android:layout_margin="5dp"
+                        android:textColorHint="@color/colorGrey"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:background="@color/colorBackground"/>
+                    <View
+                        android:layout_width="0.6dp"
+                        android:background="@color/colorGrey"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="11sp"
+                        android:text="SPGA :"
+                        android:padding="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
+                        android:layout_weight="8.5"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_weight="6"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/spga"
+                        android:textColorHint="@color/colorLightGrey"
+                        android:textSize="13sp"
+                        android:gravity="left"
+                        android:textColor="@color/colorBlack"
+                        android:hint="Out Of 10"
+                        android:padding="8dp"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@color/colorBackground"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:gravity="center"
+                android:id="@+id/add"
+                android:padding="15dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:background="@drawable/dash_rectangle"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:backgroundTint="@color/colorGrey"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrey"
+                    android:text="Add Semester"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="2dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="CGPA OutOf"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit"
+                    android:layout_marginLeft="15dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="10dp"
+                        android:text="10"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        android:id="@+id/ten"
+                        android:background="@drawable/toggle_on"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:paddingBottom="5dp"
+                        android:text="5"
+                        android:paddingRight="10dp"
+                        android:layout_marginRight="2dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        android:id="@+id/five"
+                        android:background="@null"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="reset"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/colorMain"
+                    android:textSize="14sp"
+                    android:id="@+id/reset"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/not_selected_button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="CALCULATE"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:id="@+id/calculate"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/selected_button"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/colorGrey"
+                android:layout_margin="20dp"
+                android:layout_height="0.5dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/element"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorMain"
+                        android:text="CGPA"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:id="@+id/cgpa"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/colorMain"
+                        android:text=""/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="Save result"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:textColor="#fff"
+                        android:textSize="14sp"
+                        android:id="@+id/save"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/selected_button"
+                        android:layout_marginTop="25dp"/>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/element"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorMain"
+                        android:text="Percentage"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:id="@+id/percentage"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/colorMain"
+                        android:text=""/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

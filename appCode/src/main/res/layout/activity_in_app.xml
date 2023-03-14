@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Pages.InApp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="18dp"
+        android:elevation="10dp"
+        android:id="@+id/titlebar"
+        android:background="@color/colorMain"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:backgroundTint="#fff"
+            android:id="@+id/titleIcon"
+            android:background="@drawable/ic_cart"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/Remove_Ads"
+            android:textSize="15sp"
+            android:id="@+id/titleText"
+            android:textColor="#fff"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@+id/titlebar"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/colorBlack"
+                android:text="Remove ads for Free"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+               />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/colorBlack"
+                android:text="Watching the Video ad until the end can remove the ads for 12 hours for free."
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:textColor="#fff"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:onClick="rewardAds"
+                android:background="@drawable/selected_button"
+                android:text="Try Ad_Free version for free"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

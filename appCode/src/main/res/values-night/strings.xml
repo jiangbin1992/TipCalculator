@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Tip Calculator</string>
+
+
+    <string name="Favourites">Favourites</string>
+    <string name="Percentage">Percentage</string>
+    <string name="General">General</string>
+    <string name="maths">Maths Calculator</string>
+
+    <string name="x2">x<sup>2</sup></string>
+
+    <!--    menu     -->
+    <string name="Remove_Ads">Remove Ads</string>
+    <string name="ChangeCurrency">Change Currency</string>
+    <string name="RateUS">Rate Us</string>
+    <string name="Downloads">Downloads</string>
+    <string name="Contact_Us">Contact Us</string>
+    <string name="Theme">Theme</string>
+    <string name="Share">Share Our App</string>
+    <string name="Saved">Saved</string>
+    <string name="More_Apps">More Apps</string>
+    <string name="Privacy">Privacy Policy</string>
+
+    <!--    calculation     -->
+    <string name="discount">Discount</string>
+    <string name="cgpa">CGPA</string>
+    <string name="gpa">GPA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="email">feedback.arpa@gmail.com</string>
+    <string name="appLink">https://play.google.com/store/apps/details?id=com.arpa.percentagecalculator</string>
+
+    <string name="version">v.0.6</string>
+    <!--Test App Id-->
+    <string name="inter_ads">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ads">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="rewards_ads">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="native_ads">ca-app-pub-3940256099942544/2247696110</string>
+    <!--admob-->
+<!--    <string name="inter_ads">ca-app-pub-3547026615546708/8418589107</string>-->
+<!--    <string name="banner_ads">ca-app-pub-3547026615546708/3058644735</string>-->
+<!--    <string name="rewards_ads">ca-app-pub-3940256099942544/5224354917</string>-->
+<!--    <string name="native_ads">ca-app-pub-3547026615546708/3904629025</string>-->
+</resources>

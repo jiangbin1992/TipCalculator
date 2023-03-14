@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "375921094542",
+    "project_id": "percentagecalculator-3b556",
+    "storage_bucket": "percentagecalculator-3b556.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375921094542:android:b9c6abf8bdf931c30f7edf",
+        "android_client_info": {
+          "package_name": "com.codecanyon.percentage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375921094542-qdme9ot054dbjubusru2bp9ns11n6vk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codecanyon.percentage",
+            "certificate_hash": "e4909cff0a58f548a9cadeee7e7845dacc83bf20"
+          }
+        },
+        {
+          "client_id": "375921094542-n90n4vgfp0es5ndif15nr2tptuc568id.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG24peFZ6fmRt10KNKOVpDx5A-XAG20P0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375921094542-n90n4vgfp0es5ndif15nr2tptuc568id.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

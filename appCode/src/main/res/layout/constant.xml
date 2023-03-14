@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="190dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/boxlayout">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="26dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/boxlayout"
+            android:gravity="center"
+            android:text="CONSTANT"
+            android:textColor="#000000"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="e"
+            android:id="@+id/e"
+            android:tag="e"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="pie"
+            android:tag="pie"
+            android:id="@+id/pie"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="h"
+            android:tag="h"
+            android:id="@+id/h"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="R"
+            android:id="@+id/r"
+            android:tag="r"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="G"
+            android:tag="G"
+            android:id="@+id/gcaptal"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="F"
+            android:tag="F"
+            android:id="@+id/f"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="g"
+            android:id="@+id/g"
+            android:tag="g"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="k"
+            android:id="@+id/k"
+            android:tag="k"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/boxlayout"
+            android:text="atm"
+            android:id="@+id/atm"
+            android:tag="atm"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/cancel"
+        android:text="cancel"
+        android:textSize="22sp"
+        android:background="@drawable/boxlayout"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

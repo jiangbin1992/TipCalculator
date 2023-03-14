@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Calculation.Ratio">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Numerator"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/num"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of the Numerator"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:id="@+id/lock1"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/ic_outline_lock_24"
+                    android:backgroundTint="@color/colorLightGrey"
+                    android:layout_height="20dp"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Denominator"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/denominator"
+                    android:inputType="numberDecimal"
+                    android:background="@null"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the value of the Numerator"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:id="@+id/lock2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/ic_outline_lock_24"
+                    android:backgroundTint="@color/colorLightGrey"
+                    android:layout_height="20dp"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Percentage %"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/percent"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Enter the percentage "/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:id="@+id/lock3"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/ic_outline_lock_24"
+                    android:backgroundTint="@color/colorLightGrey"
+                    android:layout_height="20dp"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="reset"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="@color/colorMain"
+                android:textSize="14sp"
+                android:id="@+id/reset"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/not_selected_button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/colorLightGrey"
+                android:text="Add any two known values the third unknown value will be found automatically."/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

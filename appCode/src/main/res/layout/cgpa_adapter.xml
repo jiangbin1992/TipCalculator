@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:paddingTop="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/element"
+        android:orientation="vertical"
+        android:layout_marginRight="45dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_weight="7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:hint="Semester"
+                android:textColorHint="@color/colorGrey"
+                android:id="@+id/semester1"
+                android:text="Semester 1"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:background="@color/colorBackground"/>
+            <View
+                android:layout_width="0.6dp"
+                android:background="@color/colorGrey"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp"
+                android:text="SPGA :"
+                android:textColorHint="@color/colorLightGrey"
+                android:padding="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:layout_weight="8.5"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_weight="6"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/spga"
+                android:textSize="13sp"
+                android:gravity="left"
+                android:textColorHint="@color/colorLightGrey"
+                android:padding="8dp"
+                android:inputType="numberDecimal"
+                android:layout_margin="5dp"
+                android:background="@color/colorBackground"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <ImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/delete"
+        android:background="@drawable/ic_outline_cancel_24"
+        android:backgroundTint="@color/colorMain"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

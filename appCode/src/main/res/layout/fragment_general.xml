@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".Calculation.General">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Percentage %"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/percentage"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:background="@null"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Add percentage %"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:id="@+id/lock1"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/ic_outline_lock_24"
+                    android:backgroundTint="@color/colorLightGrey"
+                    android:layout_height="20dp"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Out Of (Total Value)"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/outOf"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Add Total Value"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/lock2"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/ic_outline_lock_24"
+                    android:backgroundTint="@color/colorLightGrey"
+                    android:layout_height="20dp"
+                    />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Obtained Value"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/obtained"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textColor="@color/colorBlack"
+                    android:hint="Add Obtained Value"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/lock3"
+                    android:background="@drawable/ic_outline_lock_24"
+                    android:backgroundTint="@color/colorLightGrey"
+                    android:layout_height="20dp"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="reset"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="@color/colorMain"
+                android:textSize="14sp"
+                android:id="@+id/reset"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/not_selected_button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/colorLightGrey"
+                android:text="Add any two known values the third unknown value will be found automatically.\n If you lock the value that part will not be calculated."/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
