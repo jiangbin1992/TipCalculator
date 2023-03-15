@@ -17,10 +17,10 @@ class Constant {
         const val AD_APP_OPEN_ID = "ca-app-pub-3940256099942544/5662855259"
         const val AD_APP_REWARDED_ID = "ca-app-pub-3940256099942544/1712485313"
         //正式id
-//        const val AD_BANNER_ID = "ca-app-pub-4579422483792864/2344700927"
-//        const val AD_INTERSTITIAL_ID = "ca-app-pub-4579422483792864/1111510302"
-//        const val AD_APP_OPEN_ID = "ca-app-pub-4579422483792864/6946560412"
-//        const val AD_APP_REWARDED_ID = "ca-app-pub-4579422483792864/2077377111"
+//        const val AD_BANNER_ID = "ca-app-pub-4579422483792864/6633102160"
+//        const val AD_INTERSTITIAL_ID = "ca-app-pub-4579422483792864/5336617772"
+//        const val AD_APP_OPEN_ID = "ca-app-pub-4579422483792864/9579400527"
+//        const val AD_APP_REWARDED_ID = "ca-app-pub-4579422483792864/9084291093"
 
     }
 }

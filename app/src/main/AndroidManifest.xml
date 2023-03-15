@@ -28,7 +28,7 @@
 <!--        正式-->
 <!--        <meta-data-->
 <!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
-<!--            android:value="ca-app-pub-4579422483792864~2029824399" />-->
+<!--            android:value="ca-app-pub-4579422483792864~8669358129" />-->
 <!--        <provider-->
 <!--            android:name="androidx.core.content.FileProvider"-->
 <!--            android:authorities="${applicationId}"-->
