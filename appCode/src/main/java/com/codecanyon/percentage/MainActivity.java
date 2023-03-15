@@ -1,5 +1,6 @@
 package com.codecanyon.percentage;
 
+import static com.best.now.myad.utils.Constant.AD_INTERSTITIAL_ID;
 import static com.best.now.myad.utils.Constant.URL_PRIVACY_POLICY;
 import static com.best.now.myad.utils.PublicHelperKt.loadAd;
 
@@ -136,39 +137,39 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             }
         });
 
-        if (!Constants.PURCHASE_STATUS) {
-            loadInterAds();
-            AdLoader adLoader = new AdLoader.Builder(this, getString(R.string.native_ads))
-                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd nativeAd) {
-                            //Show the ad.
-                            FrameLayout frameLayout =
-                                    findViewById(R.id.nativeAds);
-                            // Assumes that your ad layout is in a file call native_ad_layout.xml
-                            // in the res/layout folder
-                            NativeAdView adView = (NativeAdView) getLayoutInflater()
-                                    .inflate(R.layout.native_ads, null);
-                            // This method sets the text, images and the native ad, etc into the ad
-                            // view.
-                           // populateNativeAdView(nativeAd, adView);
-                        }
-                    })
-                    .withAdListener(new AdListener() {
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            // Handle the failure by logging, altering the UI, and so on.
-                        }
-                    })
-                    .withNativeAdOptions(new NativeAdOptions.Builder()
-                            // Methods in the NativeAdOptions.Builder class can be
-                            // used here to specify individual options settings.
-                            .build())
-                    .build();
-            adLoader.loadAds(new AdRequest.Builder().build(), 3);
-        } else {
-            cart.setVisibility(View.GONE);
-        }
+//        if (!Constants.PURCHASE_STATUS) {
+//            loadInterAds();
+//            AdLoader adLoader = new AdLoader.Builder(this, AD_INTERSTITIAL_ID)
+//                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+//                        @Override
+//                        public void onNativeAdLoaded(NativeAd nativeAd) {
+//                            //Show the ad.
+//                            FrameLayout frameLayout =
+//                                    findViewById(R.id.nativeAds);
+//                            // Assumes that your ad layout is in a file call native_ad_layout.xml
+//                            // in the res/layout folder
+//                            NativeAdView adView = (NativeAdView) getLayoutInflater()
+//                                    .inflate(R.layout.native_ads, null);
+//                            // This method sets the text, images and the native ad, etc into the ad
+//                            // view.
+//                           // populateNativeAdView(nativeAd, adView);
+//                        }
+//                    })
+//                    .withAdListener(new AdListener() {
+//                        @Override
+//                        public void onAdFailedToLoad(LoadAdError adError) {
+//                            // Handle the failure by logging, altering the UI, and so on.
+//                        }
+//                    })
+//                    .withNativeAdOptions(new NativeAdOptions.Builder()
+//                            // Methods in the NativeAdOptions.Builder class can be
+//                            // used here to specify individual options settings.
+//                            .build())
+//                    .build();
+//            adLoader.loadAds(new AdRequest.Builder().build(), 3);
+//        } else {
+//            cart.setVisibility(View.GONE);
+//        }
         usingAppVersion = getString(R.string.version);
         firebaseDatabase = FirebaseDatabase.getInstance(Constants.FIREBASE_LINK);
         mDatabase = firebaseDatabase.getReference("version");
@@ -232,7 +233,8 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                     PublicHelperKt.showInterstitialAd(MainActivity.this, new Function0<Unit>() {
                         @Override
                         public Unit invoke() {
-                            meenuNav();
+//                            meenuNav();
+                            WebActivity.Companion.startActivity(MainActivity.this, "Privacy Policy", URL_PRIVACY_POLICY);
                             return null;
                         }
                     });
@@ -855,7 +857,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                         @Override
                         public Unit invoke() {
                             menu.dismiss();
-                            WebActivity.Companion.startActivity(MainActivity.this,"Privacy Policy",URL_PRIVACY_POLICY);
+                            WebActivity.Companion.startActivity(MainActivity.this, "Privacy Policy", URL_PRIVACY_POLICY);
                             return null;
                         }
                     });
@@ -959,7 +961,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
     private void loadInterAds() {
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this, getString(R.string.inter_ads), adRequest,
+        InterstitialAd.load(this, AD_INTERSTITIAL_ID, adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

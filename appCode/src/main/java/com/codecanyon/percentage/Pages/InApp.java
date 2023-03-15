@@ -1,5 +1,7 @@
 package com.codecanyon.percentage.Pages;
 
+import static com.best.now.myad.utils.Constant.AD_APP_REWARDED_ID;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -61,7 +63,7 @@ public class InApp extends AppCompatActivity{
     private void loadRewardAds() {
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        RewardedAd.load(this, getString(R.string.rewards_ads),
+        RewardedAd.load(this, AD_APP_REWARDED_ID,
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {

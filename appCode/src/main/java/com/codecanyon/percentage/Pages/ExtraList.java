@@ -1,5 +1,8 @@
 package com.codecanyon.percentage.Pages;
 
+import static com.best.now.myad.utils.Constant.AD_INTERSTITIAL_ID;
+import static com.best.now.myad.utils.PublicHelperKt.loadAd;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -13,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -130,9 +134,11 @@ public class ExtraList extends AppCompatActivity implements SavedAdapter.Adapter
         });
 
         if(! Constants.PURCHASE_STATUS) {
-            AdView madview=findViewById(R.id.adView);
-            AdRequest adRequest=new AdRequest.Builder().build();
-            madview.loadAd(adRequest);
+//            AdView madview=findViewById(R.id.adView);
+//            AdRequest adRequest=new AdRequest.Builder().build();
+//            madview.loadAd(adRequest);
+            LinearLayout advBanner = findViewById(R.id.adView);
+            loadAd(advBanner);
         }
 
         Intent intent=getIntent();
@@ -151,7 +157,7 @@ public class ExtraList extends AppCompatActivity implements SavedAdapter.Adapter
     private void loadInterAds() {
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,getString(R.string.inter_ads), adRequest,
+        InterstitialAd.load(this,AD_INTERSTITIAL_ID, adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
