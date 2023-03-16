@@ -63,43 +63,43 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
      */
     public void fetchAd() {
         // Have unused ad, no need to fetch another.
-        if (isAdAvailable()) {
-            return;
-        }
-
-        loadCallback =
-                new AppOpenAd.AppOpenAdLoadCallback() {
-                    /**
-                     * Called when an app open ad has loaded.
-                     *
-                     * @param ad the loaded app open ad.
-                     */
-                    @Override
-                    public void onAdLoaded(AppOpenAd ad) {
-                        AppOpenManager.this.appOpenAd = ad;
-                        AppOpenManager.this.loadTime = (new Date()).getTime();
-                        if (isFirst){
-                            showAdIfAvailable();
-                            isFirst = false;
-                        }
-                    }
-
-                    /**
-                     * Called when an app open ad has failed to load.
-                     *
-                     * @param loadAdError the error.
-                     */
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError loadAdError) {
-                        // Handle the error.
-                        loadAdError.toString();
-                    }
-
-                };
-        AdRequest request = getAdRequest();
-        AppOpenAd.load(
-                myApplication, Constant.AD_APP_OPEN_ID, request,
-                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
+//        if (isAdAvailable()) {
+//            return;
+//        }
+//
+//        loadCallback =
+//                new AppOpenAd.AppOpenAdLoadCallback() {
+//                    /**
+//                     * Called when an app open ad has loaded.
+//                     *
+//                     * @param ad the loaded app open ad.
+//                     */
+//                    @Override
+//                    public void onAdLoaded(AppOpenAd ad) {
+//                        AppOpenManager.this.appOpenAd = ad;
+//                        AppOpenManager.this.loadTime = (new Date()).getTime();
+//                        if (isFirst){
+//                            showAdIfAvailable();
+//                            isFirst = false;
+//                        }
+//                    }
+//
+//                    /**
+//                     * Called when an app open ad has failed to load.
+//                     *
+//                     * @param loadAdError the error.
+//                     */
+//                    @Override
+//                    public void onAdFailedToLoad(LoadAdError loadAdError) {
+//                        // Handle the error.
+//                        loadAdError.toString();
+//                    }
+//
+//                };
+//        AdRequest request = getAdRequest();
+//        AppOpenAd.load(
+//                myApplication, Constant.AD_APP_OPEN_ID, request,
+//                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
     }
 
     /**

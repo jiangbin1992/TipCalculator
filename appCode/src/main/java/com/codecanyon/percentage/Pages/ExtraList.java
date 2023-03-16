@@ -91,7 +91,7 @@ public class ExtraList extends AppCompatActivity implements SavedAdapter.Adapter
     @Override
     public void onBackPressed() {
         if (openedInInt%2==0) {
-            showRateApp();
+           // showRateApp();
         }else{
             if (mIntertialAds != null) {
                 mIntertialAds.show(ExtraList.this);
